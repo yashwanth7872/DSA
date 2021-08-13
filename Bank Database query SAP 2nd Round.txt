@@ -1,0 +1,15 @@
+
+
+SELECT * from TRANSACTIONS
+WHERE account_number in 
+
+(SELECT account_number FROM account_table
+
+WHERE bank_ifsc in 
+
+(SELECT bank_ifsc from BANK where branch_adrress= "Koramangala") 
+
+AND adhaar_number in 
+
+(SELECT adhaar_number FROM personal_details
+WHERE name = "yashwanth"));
