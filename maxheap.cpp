@@ -11,6 +11,7 @@ void insert(vector<int> &a,int &n,int value)
 
 	while(i>0)
 	{
+		
 		int parent = i/2;
 		if(a[parent] < a[i])
 		{
