@@ -33,7 +33,7 @@ int mincoinchange(vector<int> &coins, int n)
         cout<<endl;
     }
 
-    return 1;
+    return table[coins.size()][n];
 }
 
 int main()
@@ -42,5 +42,5 @@ int main()
     int cost = 10;
 
     int mincost = mincoinchange(coins, cost);
-    cout << "\nMin coins = " << mincost;
+    cout << "\nNumber of ways = " << mincost;
 }
