@@ -1,8 +1,6 @@
 #include <iostream>
 #include <bits/stdc++.h>
-#include "time.cpp"
 using namespace std;
-
 
 int knapsack(int i , int w ,vector<int> &weights,vector<int> & values)
 {
@@ -19,12 +17,12 @@ int knapsack(int i , int w ,vector<int> &weights,vector<int> & values)
 
 int main()
 {
-    TIMESTART
+    //TIMESTART
 
     vector<int> weights = {3,4,5};
     vector<int> values = {30,40,60};
 
     cout<<knapsack(0,8,weights,values);
-    TIMEEND
+    //TIMEEND
     return 0;
 }
