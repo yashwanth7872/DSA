@@ -1,6 +1,5 @@
 #include <iostream>
 #include <bits/stdc++.h>
-#include "time.cpp"
 using namespace std;
 
 
@@ -54,11 +53,9 @@ void partition(vector<int> arr)
 
 int main()
 {
-    TIMESTART
 
     vector<int> arr = {1,2,3,4,5,6};
     partition(arr);
 
-    TIMEEND
     return 0;
 }
