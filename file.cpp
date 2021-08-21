@@ -4,27 +4,37 @@
 using namespace std;
 
 
-int knapsack(int i , int w ,vector<int> &weights,vector<int> & values)
+int lis(vector<int> &A)
 {
+    int maxi = INT_MIN;
+    int n = A.size();
 
-    if(w < 0) return INT_MIN;
-    if(i>=weights.size()) return 0;
+    for(int i = 0;i<n;i++)
+    {
+        for(int j = 0;j<n;j++)
+        {
+            if(i==j) 
+            {
+                maxi = max(maxi,0);
+            }
+            else
+            {
+                int ans = abs(A[i] - A[j]) + abs(i-j);
+                maxi = max(ans,maxi);
+            }
+        }
+    }
 
-    int left = values[i] + knapsack(i+1,w-weights[i],weights,values);
-    int right = knapsack(i+1,w,weights,values);
-
-    return max(left , right);
+    return maxi;
 }
 
 
 int main()
 {
     TIMESTART
+    vector<int>  arr = {1, 3, -1};
+    cout<<lis(arr);
 
-    vector<int> weights = {3,4,5};
-    vector<int> values = {30,40,60};
-
-    cout<<knapsack(0,8,weights,values);
     TIMEEND
     return 0;
 }
