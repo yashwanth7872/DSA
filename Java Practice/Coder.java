@@ -1,10 +1,11 @@
 import java.util.*;
 
-public class Code
-{
+public class Coder{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int x = 10;
+        int x = sc.nextInt();
+        sc.close();
+
         
         
         System.out.println(x);
