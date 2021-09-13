@@ -3,21 +3,26 @@
 
 using namespace std;
 
-int majority(int input1,int input2[])
+int maxcollected(int i,int n,int k,int arr[])
 {
-    unordered_map<int,int> mp;
-    for(int i = 0;i<input1;i++)
-        mp[input2[i]]++;
-    for(auto i : mp)
-    {
-        if(i.second > input1/2)
-            return i.first;
-    }
-
-    return -1;
+    if(i>=n) return 0;
+    int left = maxcollected(i+1,n,k,arr);
+    int right = arr[i] + maxcollected(i+1+k,n,k,arr);
+    return max(left,right);
 }
 
 int main()
 {
-    
+    int n;
+    char *s;
+    cin>>n>>s;
+    s[0] = '0';
+    int k = atoi(s);
+    cout<<k;
+    // int arr[n];
+    // for(int i = 0;i < n;i++)
+    // {
+    //     cin>>arr[i];
+    // }
+    // cout<<maxcollected(0,n,k,arr);
 }

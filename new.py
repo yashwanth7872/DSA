@@ -1,19 +1,15 @@
+def maxcollected(i,n,k,l):
+    if i>=n: return 0
+    left = maxcollected(i+1,n,k,l)
+    right = l[i] + maxcollected(i+1+k,n,k,l)
+    return max(left,right)
 
+n,k = (map(int,input().split(",")))
+l = list()
+for i in range(n):
+    l.append(int(input()))
 
-
-def maxi(s):
-    l = s.split()
-    maxi = 0
-    result = ""
-    for i in l:
-        n = len(i)
-        if(n%2==0):
-            if(maxi < n):
-                maxi = n
-                result = i
-    return result
-
-print(maxi("It is a pleasant day today"))
+print(maxcollected(0,n,k,l))
 
     
 
